@@ -1,0 +1,125 @@
+creation of ec2 
+---------------------------------------------------------------------------
+1) search ec2 
+2) select instance (left side of screen)
+3)Launch instance  (top right side of screen)
+4) give name
+5) select any one  Ami os (amazon machine image)
+----------------------------------------------------------------------
+-> Amazon Linux aws
+-> mac Os 
+-> ubuntu
+-> windows  etc
+----------------------------------------------------------------------
+6) Instance type (cpu,hardDisk)
+--------------------------------------------------------------------------------
+7) key pair:-
+-------------------
+  option : 1) alredy avaible 2) create new keypair
+8)Network setting  (securty group) 
+ options : 1)create securty group
+           2) select existing securty group
+		   
+-> create securty group :-
+----------------------------------------
+  click on edit option (beside network setting )
+  give Security group name - required and Description - required  Info
+  
+  ->  inbound rule
+---------------------------------
+         Type                      protocol              port ras
+           -----                  ----------------       --------------
+    1)    ssh                          TCP                                22
+    2)   custom TCP        TCP                                80        -> Tomcat or nginx port number
+
+Source type         source info            Description
+----------------         ---------------         --------------------
+Anywhere          
+
+
+9) Configure storage 
+---------------------------------
+dont change anything
+
+finally, Launch instance
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+connecting our local repo to server  :-
+--------------------------------------------------
+
+1)  goto instances
+2) select our Ec2
+3)  select connect   (Top of screen)
+4)  SSH Cilent
+
+
+-----> open gitbash (Desktop)
+
+1)  cd
+2) cd Download
+3)   ssh -i "first.pem" ec2-user@ec2-16-170-228-181.eu-north-1.compute.amazonaws.com
+       ( This link avaible in SSH cilent)
+4) yes
+5)  sudo su (or) sudo -i     ---->  this is for check ec2 directory
+                                                     ----> its shows ip addres    Ex:-[root@ip-172-31-36-84 ~]#
+
+6) instead ip we will set our name :-
+
+  --->     hostnamectl set-hostname sai
+
+           ex:-   [root@sai ec2-user]#
+
+7) install our Ami
+---------------------------------
+
+        nignx                                                               ubuntu  /   Amzon Linux
+--------------------                                          -------------------------------------                                               
+1)  yum update -y                                          1) apt update -y
+2) yum install nginx -y                                2) apt install apache2 -y
+
+-> systemctl start nginx                            -> systemctl start apache2
+-> systemctl stop nginx                            -> systemctl start apache2
+-> systemctl enable nginx                       -> systemctl enables apache2
+-> systemctl status nginx                         -> systemctl status apache2
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ec2 machine 3 ways conncect the server :
+
+1) username and password
+2) acces key and secret key
+3) ssh cilent
+  ex:-
+-> ssh -i "first.pem" ec2-user@ec2-16-170-228-181.eu-north-1.compute.amazonaws.com
+       ( This link avaible in SSH cilent)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
